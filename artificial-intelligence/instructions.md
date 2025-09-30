@@ -1,6 +1,6 @@
 # general instructions
 
-this document ([instructions]https://github.com/felipeharker/harkitecture-lab/blob/64e7ad22c0ce39c78d1247869d8c1772ad7c4bb3/artificial-intelligence/instructions.md) is the primary set of instructions for this project on ChatGPT. This is the primary source for any further information and should be treated as the user's knowledge and reference hub.
+this document is the primary set of instructions for this project on ChatGPT. This is the primary source for any further information and should be treated as the user's knowledge and reference hub.
 
 # resources, docs, and reference material
 

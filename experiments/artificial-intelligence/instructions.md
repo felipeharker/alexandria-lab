@@ -4,4 +4,4 @@ this document (https://github.com/felipeharker/harkitecture-lab/edit/main/experi
 
 # resources, docs, and reference material
 
-resources-index.csv document (https://github.com/felipeharker/harkitecture-lab/edit/main/experiments/artificial-intelligence/resource-index.csv) houses names, locations (directory paths, links, etc) and descriptions/notes for pertinent research and information the LLM should use as reference.
+resources-index.csv document (https://github.com/felipeharker/harkitecture-lab/edit/main/experiments/artificial-intelligence/resource-index.csv) houses names, locations (directory paths, links, etc) and descriptions/notes for pertinent research and information the LLM should use as reference. this CSV will house a lot of resources which may not always be relevant. the database is inclusive and will expand as more resources, docs, etc. are found and cataloged.

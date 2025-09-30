@@ -1,17 +1,17 @@
 File/Resource Name,Type (PDF / Web / Dataset / Other),GitHub Directory Path,Description,Notes
 
-Grasshopper Manual, PDF, research/parametric-design/Grasshopper Manual.pdf, reference documentation, gold standard for any information related to vanilla grasshopper and its functionality; components; etc
+Grasshopper Manual, PDF, https://github.com/felipeharker/harkitecture-lab/tree/main/research/parametric-design/Grasshopper Manual.pdf, reference documentation, gold standard for any information related to vanilla grasshopper and its functionality; components; etc
 
-Grasshopper Algorithmic Modelling Parametric Design for Product Platform Customisation, PDF, research/parametric-design/Grasshopper Algorithmic Modelling Parametric Design for Product Platform Customisation.pdf, research journal, product/industrial design applications for parametric apps (grasshopper)
+Grasshopper Algorithmic Modelling Parametric Design for Product Platform Customisation, PDF, https://github.com/felipeharker/harkitecture-lab/tree/main/research/parametric-design/Grasshopper Algorithmic Modelling Parametric Design for Product Platform Customisation.pdf, research journal, product/industrial design applications for parametric apps (grasshopper)
 
-Study_of_the_Control_of_Geometric_Pattern_Using_Di, PDF, research/parametric-design/Study_of_the_Control_of_Geometric_Pattern_Using_Di.pdf, research journal, examining the creation of patterns and geometric form with parametric design tools; mostly 2D
+Study_of_the_Control_of_Geometric_Pattern_Using_Di, PDF, https://github.com/felipeharker/harkitecture-lab/tree/main/research/parametric-design/Study_of_the_Control_of_Geometric_Pattern_Using_Di.pdf, research journal, examining the creation of patterns and geometric form with parametric design tools; mostly 2D
 
-Understanding the Role of Rhino as a Parametric Tool in Designing Architectural Built-Forms, PDF, research/parametric-design/Understanding the Role of Rhino as a Parametric Tool in Designing Architectural Built-Forms.pdf, research journal, larger scale (architectural) design applications for parametric design processes (grasshopper)
+Understanding the Role of Rhino as a Parametric Tool in Designing Architectural Built-Forms, PDF, https://github.com/felipeharker/harkitecture-lab/tree/main/research/parametric-design/Understanding the Role of Rhino as a Parametric Tool in Designing Architectural Built-Forms.pdf, research journal, larger scale (architectural) design applications for parametric design processes (grasshopper)
 
-Defining Voronoi Algorithms and their Formal Properties, PDF, research/parametric-design/Defining Voronoi Algorithms and their Formal Properties.pdf, experimental literature, employed LLM to write and conduct research on voronoi algorithms; this is low quality relative to other documents and resources listed above
+Defining Voronoi Algorithms and their Formal Properties, PDF, https://github.com/felipeharker/harkitecture-lab/tree/main/research/parametric-design/Defining Voronoi Algorithms and their Formal Properties.pdf, experimental literature, employed LLM to write and conduct research on voronoi algorithms; this is low quality relative to other documents and resources listed above
 
-Parametric Modeling in Architectural Design, PDF, research/parametric-design/Parametric Modeling in Architectural Design.pdf, experimental literature, employed LLM to write and conduct research on parametric modeling in architectural design; this is low quality relative to other documents and resources listed above
+Parametric Modeling in Architectural Design, PDF, https://github.com/felipeharker/harkitecture-lab/tree/main/research/parametric-design/Parametric Modeling in Architectural Design.pdf, experimental literature, employed LLM to write and conduct research on parametric modeling in architectural design; this is low quality relative to other documents and resources listed above
 
-Alexandria Labs Roadmap-1, PDF, research/parametric-design/Alexandria Labs Roadmap-1.pdf, experimental literature, self-authored document outlining the goals; materials; methods; and standards employed by my parametric lab (Alexandria); low quality relative other documents listed above
+Alexandria Labs Roadmap-1, PDF,https://github.com/felipeharker/harkitecture-lab/tree/main/research/parametric-design/Alexandria Labs Roadmap-1.pdf, experimental literature, self-authored document outlining the goals; materials; methods; and standards employed by my parametric lab (Alexandria); low quality relative other documents listed above
 
 Python 3.13.7 documentation, Web, https://docs.python.org/3/, reference documentation, general documentation regarding python 3; python 3 is useful in the development of custom grasshopper scripts and components; this resource may not always be relevant

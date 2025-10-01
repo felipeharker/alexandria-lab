@@ -1,17 +1,17 @@
-resource name,type (PDF / web / data / graphic),content type,notes,value (low / med / high)
+resource name, web link, type (PDF / web / data / graphic), content type, notes, value (low / med / high)
 
-grasshopper-manual, PDF,  reference documentation, gold standard for any information related to vanilla grasshopper and its functionality; components; etc, high
+grasshopper-manual, https://harkitecture-web-application.s3.us-east-1.amazonaws.com/harkitecture-lab/parametric-design/grasshopper-manual.pdf, PDF,  reference documentation, gold standard for any information related to vanilla grasshopper and its functionality; components; etc, high
 
-grasshopper-algorithmic-modeling-for-product-platform-customization, PDF,  research journal, product/industrial design applications for parametric apps (grasshopper), high
+grasshopper-algorithmic-modeling-for-product-platform-customization, https://harkitecture-web-application.s3.us-east-1.amazonaws.com/harkitecture-lab/parametric-design/grasshopper-algorithmic-modeling-for-product-platform-customization.pdf, PDF,  research journal, product/industrial design applications for parametric apps (grasshopper), high
 
-control-of-geo-using-grasshopper, PDF,  research journal, examining the creation of patterns and geometric form with parametric design tools; mostly 2D, high
+control-of-geo-using-grasshopper, https://harkitecture-web-application.s3.us-east-1.amazonaws.com/harkitecture-lab/parametric-design/control-of-geo-using-grasshopper.pdf, PDF,  research journal, examining the creation of patterns and geometric form with parametric design tools; mostly 2D, high
 
-parametric-modeling-in-architectural-built-form, PDF,  research journal, larger scale (architectural) design applications for parametric design processes (grasshopper), high
+parametric-modeling-in-architectural-built-form, https://harkitecture-web-application.s3.us-east-1.amazonaws.com/harkitecture-lab/parametric-design/parametric-modeling-in-architectural-built-form.pdf, PDF,  research journal, larger scale (architectural) design applications for parametric design processes (grasshopper), high
 
-python-3.13-docs, Web (https://docs.python.org/3/),  reference documentation, general documentation regarding python 3; python 3 is useful in the development of custom grasshopper scripts and components; this resource may not always be relevant, med
+python-3.13-docs, https://docs.python.org/3/, Web,  reference documentation, general documentation regarding python 3; python 3 is useful in the development of custom grasshopper scripts and components; this resource may not always be relevant, med
 
-voronoi-diagrams-definitions-formal-properties, PDF,  experimental literature, employed LLM to write and conduct research on voronoi algorithms; this is low quality relative to other documents and resources listed above, low
+voronoi-diagrams-definitions-formal-properties, https://harkitecture-web-application.s3.us-east-1.amazonaws.com/harkitecture-lab/parametric-design/voronoi-diagrams-definitions-formal-properties.pdf, PDF,  experimental literature, employed LLM to write and conduct research on voronoi algorithms; this is low quality relative to other documents and resources listed above, low
 
-parametric-modeling-in-architectural-design, PDF,  experimental literature, employed LLM to write and conduct research on parametric modeling in architectural design; this is low quality relative to other documents and resources listed above, low
+parametric-modeling-in-architectural-design, https://harkitecture-web-application.s3.us-east-1.amazonaws.com/harkitecture-lab/parametric-design/parametric-modeling-in-architectural-design.pdf, PDF,  experimental literature, employed LLM to write and conduct research on parametric modeling in architectural design; this is low quality relative to other documents and resources listed above, low
 
-alexandria-labs-roadmap, PDF,  experimental literature, self-authored document outlining the goals; materials; methods; and standards employed by my parametric lab (Alexandria); low quality relative other documents listed above, low
+alexandria-labs-roadmap, https://harkitecture-web-application.s3.us-east-1.amazonaws.com/harkitecture-lab/parametric-design/alexandria-labs-roadmap.pdf, PDF,  experimental literature, self-authored document outlining the goals; materials; methods; and standards employed by my parametric lab (Alexandria); low quality relative other documents listed above, low

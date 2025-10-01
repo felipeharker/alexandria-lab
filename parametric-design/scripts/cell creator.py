@@ -1,0 +1,209 @@
+__author__ = "FHarker"
+__version__ = "2025.10.01"
+
+"""Pattern Library Browser (Slim)
+Inputs:
+    Pattern: text name: "square", "tri", "hex", "weave"
+    X: int, cells in X
+    Y: int, cells in Y
+    Size: float, base module size
+    Origin: Point3d, base origin
+Outputs:
+    Cells: list[Polyline], closed cell boundaries
+    Edges: list[Line], unique edges (undirected)
+    Centers: list[Point3d], cell centroids
+    Info: string summary
+"""
+
+import Rhino
+from Rhino.Geometry import Point3d, Polyline, Line
+import math
+
+# -------------------------
+# Utilities
+# -------------------------
+
+def polyline_from_points(pts, close=True):
+    pl = Polyline(pts)
+    if close and pts and pts[0].DistanceTo(pts[-1]) > 1e-9:
+        pl.Add(pts[0])
+    return pl
+
+def poly_center(pl):
+    """Area centroid for closed polygon; falls back to average if degenerate."""
+    pts = list(pl)
+    if len(pts) < 4:
+        return pts[0]
+    if pts[0].DistanceTo(pts[-1]) < 1e-9:
+        pts = pts[:-1]
+    A = 0.0
+    Cx = 0.0
+    Cy = 0.0
+    for i in range(len(pts)):
+        x0, y0 = pts[i].X, pts[i].Y
+        x1, y1 = pts[(i+1)%len(pts)].X, pts[(i+1)%len(pts)].Y
+        cross = x0*y1 - x1*y0
+        A  += cross
+        Cx += (x0 + x1)*cross
+        Cy += (y0 + y1)*cross
+    if abs(A) < 1e-12:
+        sx = sum(p.X for p in pts)/len(pts)
+        sy = sum(p.Y for p in pts)/len(pts)
+        return Point3d(sx, sy, pts[0].Z)
+    A *= 0.5
+    return Point3d(Cx/(6.0*A), Cy/(6.0*A), pts[0].Z)
+
+def add_edge_unique(edge_set, a, b):
+    """Store undirected edges uniquely using rounded coordinate keys."""
+    key = lambda p: (round(p.X,6), round(p.Y,6), round(p.Z,6))
+    ka, kb = key(a), key(b)
+    k = (ka, kb) if ka <= kb else (kb, ka)
+    if k not in edge_set:
+        edge_set[k] = Line(a, b)
+
+# -------------------------
+# Pattern generators
+# return list[Polyline]
+# -------------------------
+
+def gen_square(X, Y, Size, Origin):
+    cells = []
+    ox, oy, oz = Origin.X, Origin.Y, Origin.Z
+    for j in range(Y):
+        for i in range(X):
+            x0 = ox + i*Size
+            y0 = oy + j*Size
+            pts = [
+                Point3d(x0,       y0,       oz),
+                Point3d(x0+Size,  y0,       oz),
+                Point3d(x0+Size,  y0+Size,  oz),
+                Point3d(x0,       y0+Size,  oz)
+            ]
+            cells.append(polyline_from_points(pts, True))
+    return cells
+
+def gen_tri(X, Y, Size, Origin):
+    # Equilateral triangles from staggered rows
+    w = Size
+    h = Size * math.sqrt(3)/2.0
+    cells = []
+    ox, oy, oz = Origin.X, Origin.Y, Origin.Z
+    for r in range(Y):
+        xoff = (w/2.0) if (r % 2) else 0.0
+        for c in range(X):
+            x0 = ox + c*w + xoff
+            y0 = oy + r*h
+            pA = Point3d(x0,     y0,    oz)
+            pB = Point3d(x0+w/2, y0+h,  oz)
+            pC = Point3d(x0+w,   y0,    oz)
+            if (c + r) % 2 == 0:
+                cells.append(polyline_from_points([pA, pB, pC], True))
+            else:
+                cells.append(polyline_from_points([pA, Point3d(x0+w/2, y0-h, oz), pC], True))
+    return cells
+
+def gen_hex(X, Y, Size, Origin):
+    # Pointy-top hex grid (side length = Size)
+    s = Size
+    w = math.sqrt(3)*s
+    h = 1.5*s
+    cells = []
+    ox, oy, oz = Origin.X, Origin.Y, Origin.Z
+
+    def hex_verts(cx, cy):
+        pts = []
+        for k in range(6):
+            ang = math.radians(60*k - 30)
+            pts.append(Point3d(cx + s*math.cos(ang), cy + s*math.sin(ang), oz))
+        return pts
+
+    for r in range(Y):
+        xoff = 0.0 if (r % 2 == 0) else w/2.0
+        for c in range(X):
+            cx = ox + c*w + xoff
+            cy = oy + r*h
+            cells.append(polyline_from_points(hex_verts(cx, cy), True))
+    return cells
+
+def gen_weave(X, Y, Size, Origin, band_ratio=0.6):
+    # Basket weave strips (horizontal/vertical alternating by row)
+    t = max(0.05, min(0.95, band_ratio)) * Size
+    cells = []
+    ox, oy, oz = Origin.X, Origin.Y, Origin.Z
+    for j in range(Y):
+        for i in range(X):
+            x0 = ox + i*Size
+            y0 = oy + j*Size
+            if (j % 2) == 0:
+                ymid = y0 + 0.5*Size
+                pts = [
+                    Point3d(x0,        ymid - t/2, oz),
+                    Point3d(x0+Size,   ymid - t/2, oz),
+                    Point3d(x0+Size,   ymid + t/2, oz),
+                    Point3d(x0,        ymid + t/2, oz)
+                ]
+            else:
+                xmid = x0 + 0.5*Size
+                pts = [
+                    Point3d(xmid - t/2, y0,        oz),
+                    Point3d(xmid + t/2, y0,        oz),
+                    Point3d(xmid + t/2, y0+Size,   oz),
+                    Point3d(xmid - t/2, y0+Size,   oz)
+                ]
+            cells.append(polyline_from_points(pts, True))
+    return cells
+
+# -------------------------
+# Registry
+# -------------------------
+
+def registry():
+    return {
+        "square": lambda X,Y,S,O: gen_square(X,Y,S,O),
+        "tri":    lambda X,Y,S,O: gen_tri(X,Y,S,O),
+        "hex":    lambda X,Y,S,O: gen_hex(X,Y,S,O),
+        "weave":  lambda X,Y,S,O: gen_weave(X,Y,S,O,band_ratio=0.6),
+    }
+
+# -------------------------
+# Main
+# -------------------------
+
+# Robust token parsing with default
+token = Pattern
+if not token:
+    token = "square"
+try:
+    name = str(token).strip().lower()
+except:
+    name = "square"
+
+if X is None or X < 1: X = 10
+if Y is None or Y < 1: Y = 10
+if Size is None or Size <= 0: Size = 1.0
+if Origin is None: Origin = Point3d(0,0,0)
+
+reg = registry()
+if name not in reg:
+    name = "square"
+
+Cells = reg[name](X, Y, Size, Origin)
+
+# Centers & unique edges
+Centers = [poly_center(pl) for pl in Cells]
+
+edge_dict = {}
+for pl in Cells:
+    pts = list(pl)
+    if len(pts) < 2:
+        continue
+    if pts[0].DistanceTo(pts[-1]) > 1e-9:
+        pts.append(pts[0])
+    for i in range(len(pts)-1):
+        add_edge_unique(edge_dict, pts[i], pts[i+1])
+
+Edges = list(edge_dict.values())
+
+Info = "Pattern: {} | Cells: {} | Edges: {} | Size: {} | Grid: {}x{}".format(
+    name, len(Cells), len(Edges), round(Size,3), X, Y
+)

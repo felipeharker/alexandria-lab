@@ -153,6 +153,33 @@ def gen_weave(X, Y, Size, Origin, band_ratio=0.6):
             cells.append(polyline_from_points(pts, True))
     return cells
 
+def gen_cairo(X, Y, Size, Origin):
+    import math
+    from Rhino.Geometry import Point3d, Polyline
+    ox, oy, oz = Origin.X, Origin.Y, Origin.Z
+    s = Size
+    w = math.sqrt(3)*s     # horizontal pitch
+    h = 1.5*s              # vertical pitch
+    a = 0.5*s
+    b = 1.0*s
+
+    def cell(cx, cy, z):
+        p1 = Point3d(cx - a, cy - b, z)
+        p2 = Point3d(cx + a, cy - b, z)
+        p3 = Point3d(cx + b, cy,     z)
+        p4 = Point3d(cx,     cy + b, z)
+        p5 = Point3d(cx - b, cy,     z)
+        return Polyline([p1,p2,p3,p4,p5,p1])
+
+    cells = []
+    for r in range(Y):
+        xoff = 0.0 if (r % 2 == 0) else w/2.0
+        for c in range(X):
+            cx = ox + c*w + xoff
+            cy = oy + r*h
+            cells.append(cell(cx, cy, oz))
+    return cells
+
 # -------------------------
 # Registry
 # -------------------------
@@ -163,6 +190,7 @@ def registry():
         "tri":    lambda X,Y,S,O: gen_tri(X,Y,S,O),
         "hex":    lambda X,Y,S,O: gen_hex(X,Y,S,O),
         "weave":  lambda X,Y,S,O: gen_weave(X,Y,S,O,band_ratio=0.6),
+        "cairo":  lambda X,Y,S,O: gen_cairo(X,Y,S,O), 
     }
 
 # -------------------------

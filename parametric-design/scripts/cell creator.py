@@ -1,9 +1,10 @@
 __author__ = "FHarker"
 __version__ = "2025.10.01"
 
-"""Pattern Library Browser (Slim)
+"""Pattern Library Browser (Slider-driven)
 Inputs:
-    Pattern: text name: "square", "tri", "hex", "weave"
+    Pattern: optional text name: "square", "tri", "hex", "weave", "cairo"
+    Index: integer index (0-based) to select pattern
     X: int, cells in X
     Y: int, cells in Y
     Size: float, base module size
@@ -63,7 +64,6 @@ def add_edge_unique(edge_set, a, b):
 
 # -------------------------
 # Pattern generators
-# return list[Polyline]
 # -------------------------
 
 def gen_square(X, Y, Size, Origin):
@@ -154,8 +154,6 @@ def gen_weave(X, Y, Size, Origin, band_ratio=0.6):
     return cells
 
 def gen_cairo(X, Y, Size, Origin):
-    import math
-    from Rhino.Geometry import Point3d, Polyline
     ox, oy, oz = Origin.X, Origin.Y, Origin.Z
     s = Size
     w = math.sqrt(3)*s     # horizontal pitch
@@ -184,54 +182,73 @@ def gen_cairo(X, Y, Size, Origin):
 # Registry
 # -------------------------
 
-def registry():
-    return {
-        "square": lambda X,Y,S,O: gen_square(X,Y,S,O),
-        "tri":    lambda X,Y,S,O: gen_tri(X,Y,S,O),
-        "hex":    lambda X,Y,S,O: gen_hex(X,Y,S,O),
-        "weave":  lambda X,Y,S,O: gen_weave(X,Y,S,O,band_ratio=0.6),
-        "cairo":  lambda X,Y,S,O: gen_cairo(X,Y,S,O), 
-    }
+def registry_ordered():
+    """Ordered pattern list: (key, factory) tuples in stable UI order."""
+    return [
+        ("square", lambda X,Y,S,O: gen_square(X,Y,S,O)),
+        ("tri",    lambda X,Y,S,O: gen_tri(X,Y,S,O)),
+        ("hex",    lambda X,Y,S,O: gen_hex(X,Y,S,O)),
+        ("weave",  lambda X,Y,S,O: gen_weave(X,Y,S,O,band_ratio=0.6)),
+        ("cairo",  lambda X,Y,S,O: gen_cairo(X,Y,S,O)),
+    ]
+
+def registry_dict():
+    return {k:f for k,f in registry_ordered()}
 
 # -------------------------
 # Main
 # -------------------------
 
-# Robust token parsing with default
-token = Pattern
-if not token:
-    token = "square"
-try:
-    name = str(token).strip().lower()
-except:
-    name = "square"
-
+# Defaults
 if X is None or X < 1: X = 10
 if Y is None or Y < 1: Y = 10
 if Size is None or Size <= 0: Size = 1.0
 if Origin is None: Origin = Point3d(0,0,0)
 
-reg = registry()
+ordered = registry_ordered()
+reg = registry_dict()
+
+# Choose by Index if available, else by Pattern text
+idx_in = locals().get('Index', None)
+if idx_in is not None:
+    try:
+        i = int(idx_in)
+    except:
+        i = 0
+    if len(ordered) == 0:
+        raise Exception("Registry is empty.")
+    # Clamp to valid range (change to modulo if wrap-around preferred)
+    if i < 0: i = 0
+    if i >= len(ordered): i = len(ordered)-1
+    name = ordered[i][0]
+else:
+    token = Pattern or "square"
+    try:
+        name = str(token).strip().lower()
+    except:
+        name = "square"
+
 if name not in reg:
     name = "square"
 
+# Generate cells
 Cells = reg[name](X, Y, Size, Origin)
 
 # Centers & unique edges
 Centers = [poly_center(pl) for pl in Cells]
-
 edge_dict = {}
 for pl in Cells:
     pts = list(pl)
-    if len(pts) < 2:
-        continue
+    if len(pts) < 2: continue
     if pts[0].DistanceTo(pts[-1]) > 1e-9:
         pts.append(pts[0])
-    for i in range(len(pts)-1):
-        add_edge_unique(edge_dict, pts[i], pts[i+1])
-
+    for j in range(len(pts)-1):
+        add_edge_unique(edge_dict, pts[j], pts[j+1])
 Edges = list(edge_dict.values())
 
-Info = "Pattern: {} | Cells: {} | Edges: {} | Size: {} | Grid: {}x{}".format(
-    name, len(Cells), len(Edges), round(Size,3), X, Y
+# Report
+idx_lookup = {k:i for i,(k,_) in enumerate(ordered)}
+idx = idx_lookup.get(name, -1)
+Info = "Index: {} | Pattern: {} | Cells: {} | Edges: {} | Size: {} | Grid: {}x{}".format(
+    idx, name, len(Cells), len(Edges), round(Size,3), X, Y
 )

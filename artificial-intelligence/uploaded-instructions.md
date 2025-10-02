@@ -1,3 +1,5 @@
+below are a list of important links with content, assets, tables, text, and documents pertaining to parametric design workflows, projects, and code. the resources will continue to grow and evolve overtime. close attention and adherence to these documents is critical.
+
 https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/llm-master.md
 the table of contents and general readme for the agent (chatGPT) knowledgebase is located at llm-master.md
 

@@ -13,4 +13,4 @@ https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligenc
 a simple csv housing scripts, documents, etc. output by agent and user
 
 https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/working-notes.md
-a real-time note-taking document which willbe frequently changing and growing; primarily for personal use but still relevant
+a real-time note-taking document which will be frequently changing and growing; primarily for personal use but still relevant

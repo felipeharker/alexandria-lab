@@ -32,7 +32,7 @@ llm-master.md houses a broad-level table of contents/outline of the user-generat
 
 ## resources, docs, and reference material
 
-this document serves as a database of information for the llm to draw from to improve answers, make them more specific to the user requests, and more effectively assist the user in their needs.
+resource-index.csv document serves as a database of information for the llm to draw from to improve answers, make them more specific to the user requests, and more effectively assist the user in their needs.
 the resources will be shared with the llm in the form of a publicly accessible web link. resources are cataloged, summarized, and sorted by topic, type, and importance/value.
 
 ## working notes
@@ -42,7 +42,7 @@ working notes may include: ideas for new definitions/scripts, bugs, thoughts, li
 
 ## outputs
 
-outputs.md holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm.
+outputs.csv holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm.
 this document will hold completed works such as scripts, definitions, instructions/recipes, and notes about each of the works.
 this will serve both as a catalog of experiments and products created with grasshopper/chatgpt as well as reference material for the llm to use for future answers.
 

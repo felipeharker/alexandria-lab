@@ -4,7 +4,7 @@ working-notes.md is a real-time notes file for documenting ideas, workflow, proc
 
 # 01 October 2025
 
-## Abstract
+## abstract
 
 engaged with chatgpt
 

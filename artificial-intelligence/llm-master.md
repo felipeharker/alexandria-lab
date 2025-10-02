@@ -17,4 +17,4 @@ working-notes.md is a real-time notes file for documenting ideas, workflow, proc
 
 # outputs
 
-outputs.md holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with LLM.
+outputs.csv holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with LLM.

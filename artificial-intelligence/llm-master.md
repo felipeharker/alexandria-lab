@@ -10,6 +10,9 @@ this document serves largely as a table of contents and some material found here
 https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/resource-index.csv
 document houses names, locations (directory paths, links, etc) and descriptions/notes for pertinent research and information the LLM should use as reference. this CSV will house a lot of resources which may not always be relevant. the database is inclusive and will expand as more resources, docs, etc. are found and cataloged.
 
+https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/web-resource-index.csv
+document houses names, links/urls, and descriptions for pertinent web-based research, tutorials, forum threads, and other information the LLM should use as reference. this CSV will house a lot of resources which may not always be relevant. the database is inclusive and will expand as more resources, docs, etc. are found and cataloged.
+
 ## working notes
 
 https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/working-notes.md

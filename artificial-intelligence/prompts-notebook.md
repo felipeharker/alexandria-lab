@@ -1,4 +1,4 @@
-#Sora 2 Stylistic Prompting
+# Sora 2 Stylistic Prompting
 ## October 2025
 
 Format & Look

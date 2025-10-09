@@ -1,3 +1,6 @@
+#Sora 2 Stylistic Prompting
+## October 2025
+
 Format & Look
 Duration 4s; 180° shutter; digital capture emulating 65 mm photochemical contrast; fine grain; subtle halation on speculars; no gate weave.
 

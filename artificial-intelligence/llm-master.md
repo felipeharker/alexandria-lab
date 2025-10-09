@@ -18,6 +18,10 @@ document houses names, links/urls, and descriptions for pertinent web-based rese
 https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/working-notes.md
 is a real-time notes file for documenting ideas, workflow, processes, etc. during the creation of a given work/experiment and broadly for notes related to the entire project.
 
+https://github.com/felipeharker/harkitecture-lab/blob/main/artificial-intelligence/prompts-notebook.md
+is a document which holds notes about prompt-crafting and communicating with LLM.
+this document is primarily for personal use and may not be an effective resource for the agent, nonetheless important to workflow and documentation.
+
 ## outputs
 
 https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/outputs.csv

@@ -1,5 +1,4 @@
 # Sora 2 Stylistic Prompting
-## October 2025
 
 Format & Look
 Duration 4s; 180° shutter; digital capture emulating 65 mm photochemical contrast; fine grain; subtle halation on speculars; no gate weave.
@@ -18,3 +17,5 @@ Bounce: 4×4 ultrabounce silver from trackside.
 Negative fill from opposite wall.
 Practical: sodium platform lights on dim fade.
 Atmos: gentle mist; train exhaust drift through light beam.
+
+_October 2025_

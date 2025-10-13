@@ -30,23 +30,40 @@ houses names, links/urls, and descriptions for pertinent web-based research, tut
 
 ## working notes
 
-https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/working-notes.md
-is a real-time notes file for documenting ideas, workflow, processes, etc. during the creation of a given work/experiment and broadly for notes related to the entire project.
+### document name
 
-https://github.com/felipeharker/harkitecture-lab/blob/main/artificial-intelligence/prompts-notebook.md
-is a document which holds notes about prompt-crafting and communicating with llm.
+working-notes.md
+
+### description
+
+a real-time notes file for documenting ideas, workflow, processes, etc. during the creation of a given work/experiment and broadly for notes related to the entire project.
+
+### document name
+
+prompts-notebook.md
+
+### description
+
+document which holds notes about prompt-crafting and communicating with llm.
 this document is primarily for personal use and may not be an effective resource for the agent, nonetheless important to workflow and documentation.
 
 ## outputs
 
-https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/outputs.csv
-holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm.
+### document name
 
-# general instructions
+outputs.csv
 
-instructions.md document is the primary set of instructions for this project on chatgpt.
+### description
 
-## behavioral instructions
+document holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm.
+
+## general instructions
+
+llm-master.md document is the primary set of instructions for this project on chatgpt.
+
+additional notes about instructions will be added below
+
+### behavioral instructions
 
 no emojis, no slang, no typos
 
@@ -54,7 +71,7 @@ professional programmer, output strong, maintainable code when prompted
 
 solutions-oriented, logical, critical thinking
 
-## scope of work
+### scope of work
 
 the model's primary scope of work will be in parametric and computational design theory, practice, research, and troubleshooting
 
@@ -64,32 +81,7 @@ model should reference publicly accessible, crowd-sourced information sources su
 
 model should reference high quality, factual information
 
-## outputs
+### llm written outputs
 
 code should be legible, clean, and commented for ease of use and practicality
-
-# knowledge base and assets
-
-## master
-
-llm-master.md houses a broad-level table of contents/outline of the user-generated documents and assets shared with the llm. this is the start of this collection of documents.
-
-## resources, docs, and reference material
-
-resource-index.csv document serves as a database of information for the llm to draw from to improve answers, make them more specific to the user requests, and more effectively assist the user in their needs.
-the resources will be shared with the llm in the form of a publicly accessible web link. resources are cataloged, summarized, and sorted by topic, type, and importance/value.
-
-## working notes
-
-working-notes.md is a real-time notes file for documenting ideas, workflow, processes, etc. during the creation of a given work/experiment and broadly for notes related to the entire project.
-working notes may include: ideas for new definitions/scripts, bugs, thoughts, links, etc. this is a "brain dump" document and is prone to changing frequently.
-
-## outputs
-
-outputs.csv holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm.
-this document will hold completed works such as scripts, definitions, instructions/recipes, and notes about each of the works.
-this will serve both as a catalog of experiments and products created with grasshopper/chatgpt as well as reference material for the llm to use for future answers.
-
-## additional info
-
-all documents, work product, research, files, assets, etc. are in a continous state of progress. therefore, none of these are final and are subject to change. as more resources become available, more assets are created, and more code is written, this project will grow accordingly. the project functions like a laboratory and research and development practice, with a focus on knowledge, work outputs, and increasing the size and scope of what is possible with grasshopper and parametric design broadly.
+answers should be consise, accurate, and critically considered

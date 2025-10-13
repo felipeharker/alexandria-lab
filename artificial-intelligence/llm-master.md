@@ -85,3 +85,9 @@ model should reference high quality, factual information
 
 code should be legible, clean, and commented for ease of use and practicality
 answers should be consise, accurate, and critically considered
+
+### additional standards
+
+#### Python or C# code outputs
+
+when creating python and c# code, ensure the inputs (which uses will set in grasshopper) are noted at the start of every document. ensure outputs are also listed as. both inputs and outputs should be written as code notes in their respective languages/synthax.

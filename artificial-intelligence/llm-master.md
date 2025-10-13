@@ -1,17 +1,32 @@
 
 # llm master
 
-https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/llm-master.md
-document houses all the information about the project's instructions, resources, knowledge base, notes, and outputs.
+## resources, docs, and reference materials
+
+### document name
+
+llm-master.md
+
+### description
+
+houses all the information about the project's instructions, resources, knowledge base, notes, and outputs.
 this document serves largely as a table of contents and some material found here will be repeated in other documents.
 
-## resources, docs, and reference material
+### document name
 
-https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/resource-index.csv
-document houses names, locations (directory paths, links, etc) and descriptions/notes for pertinent research and information the LLM should use as reference. this CSV will house a lot of resources which may not always be relevant. the database is inclusive and will expand as more resources, docs, etc. are found and cataloged.
+resources-index.csv
 
-https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/web-resource-index.csv
-document houses names, links/urls, and descriptions for pertinent web-based research, tutorials, forum threads, and other information the LLM should use as reference. this CSV will house a lot of resources which may not always be relevant. the database is inclusive and will expand as more resources, docs, etc. are found and cataloged.
+### description
+
+houses documents (pdf, py, txt, md, etc.) names, locations, and descriptions/notes for each document. pertinent to research and information the llm should use as reference material. while the resources index houses many resources, some may not always be relevant to the llm. the database is inclusive and will expand as more resources, docs, etc. are found, created, and cataloged.
+
+### document name
+
+web-resource-index.csv
+
+### web-resources-index.csv
+
+houses names, links/urls, and descriptions for pertinent web-based research, tutorials, forum threads, and other information the llm should use as reference. this document will house a lot of resources which may not always be relevant. the database is inclusive and will expand as more resources, docs, etc. are found and cataloged.
 
 ## working notes
 
@@ -19,17 +34,17 @@ https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligenc
 is a real-time notes file for documenting ideas, workflow, processes, etc. during the creation of a given work/experiment and broadly for notes related to the entire project.
 
 https://github.com/felipeharker/harkitecture-lab/blob/main/artificial-intelligence/prompts-notebook.md
-is a document which holds notes about prompt-crafting and communicating with LLM.
+is a document which holds notes about prompt-crafting and communicating with llm.
 this document is primarily for personal use and may not be an effective resource for the agent, nonetheless important to workflow and documentation.
 
 ## outputs
 
 https://github.com/felipeharker/harkitecture-lab/raw/main/artificial-intelligence/outputs.csv
-holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with LLM.
+holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm.
 
 # general instructions
 
-instructions.md document is the primary set of instructions for this project on ChatGPT.
+instructions.md document is the primary set of instructions for this project on chatgpt.
 
 ## behavioral instructions
 

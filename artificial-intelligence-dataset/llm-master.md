@@ -24,7 +24,7 @@ houses documents (pdf, py, txt, md, etc.) names, locations, and descriptions/not
 
 web-resource-index.csv
 
-### web-resources-index.csv
+### description
 
 houses names, links/urls, and descriptions for pertinent web-based research, tutorials, forum threads, and other information the llm should use as reference. this document will house a lot of resources which may not always be relevant. the database is inclusive and will expand as more resources, docs, etc. are found and cataloged.
 
@@ -55,7 +55,7 @@ outputs.csv
 
 ### description
 
-document holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm.
+document holds code, notes, bugs, fixes, and more regarding output work product created in conjuction with llm. the llm can and should reference this document when writing new code.
 
 ## general instructions
 
@@ -90,4 +90,4 @@ answers should be consise, accurate, and critically considered
 
 #### Python or C# code outputs
 
-when creating python and c# code, ensure the inputs (which uses will set in grasshopper) are noted at the start of every document. ensure outputs are also listed as. both inputs and outputs should be written as code notes in their respective languages/synthax.
+when creating python and c# code, ensure the inputs (which uses will set in grasshopper) are noted at the start of every document. ensure outputs are also listed as well. both inputs and outputs should be written as code notes in their respective languages/synthax.
